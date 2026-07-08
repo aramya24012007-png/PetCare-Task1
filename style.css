@@ -259,3 +259,51 @@ nav a{
 }
 
 }
+.todo-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f9f9f9;
+}
+
+.todo-section h2 {
+    color: #ff6600;
+    margin-bottom: 20px;
+}
+
+.todo-section input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.todo-section button {
+    padding: 10px 20px;
+    background: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.todo-section button:hover {
+    background: #e65c00;
+}
+
+#taskList {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+#taskList li {
+    background: white;
+    margin: 10px auto;
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
