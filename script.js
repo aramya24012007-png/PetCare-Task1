@@ -42,9 +42,101 @@ function addTask() {
     }
 
     let li = document.createElement("li");
-    li.innerHTML = task + " <button onclick='this.parentElement.remove()'>Delete</button>";
+    // li.innerHTML = task + " <button onclick='this.parentElement.remove()'>Delete</button>";
+// li.innerHTML = `
+// ${task}
+// <button onclick="this.parentElement.style.textDecoration='line-through'">
+// Done
+// </button>
+
+// <button onclick="this.parentElement.remove()">
+// Delete
+// </button>
+// `;
+li.innerHTML = `
+<span>${task}</span>
+
+<div>
+    <button onclick="this.closest('li').querySelector('span').style.textDecoration='line-through'">
+        Done
+    </button>
+
+    <button onclick="this.closest('li').remove()">
+        Delete
+    </button>
+</div>
+`;
 
     document.getElementById("taskList").appendChild(li);
 
     taskInput.value = "";
+}
+const images = [
+
+"https://images.dog.ceo/breeds/retriever-golden/n02099601_100.jpg",
+
+"https://images.dog.ceo/breeds/husky/n02110185_1469.jpg",
+
+"https://images.dog.ceo/breeds/poodle-standard/n02113799_2280.jpg"
+
+];
+
+let current = 0;
+
+const slider = document.getElementById("sliderImage");
+
+if(slider){
+
+document.getElementById("next").onclick=function(){
+
+current++;
+
+if(current>=images.length){
+current=0;
+}
+
+slider.src=images[current];
+
+}
+
+document.getElementById("prev").onclick=function(){
+
+current--;
+
+if(current<0){
+current=images.length-1;
+}
+
+slider.src=images[current];
+
+}
+
+setInterval(function(){
+
+current++;
+
+if(current>=images.length){
+current=0;
+}
+
+slider.src=images[current];
+
+},3000);
+
+}
+
+async function getDogImage(){
+
+const response = await fetch("https://dog.ceo/api/breeds/image/random");
+
+const data = await response.json();
+
+document.getElementById("dogImage").src=data.message;
+
+}
+
+if(document.getElementById("dogImage")){
+
+getDogImage();
+
 }

@@ -307,3 +307,49 @@ nav a{
     justify-content: space-between;
     align-items: center;
 }
+
+.slider{
+text-align:center;
+padding:50px;
+}
+
+.slider-container{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:20px;
+}
+
+.slider-container img{
+width:500px;
+height:350px;
+object-fit:cover;
+border-radius:15px;
+}
+
+.api-section{
+text-align:center;
+padding:50px;
+}
+
+.api-section img{
+width:450px;
+height:300px;
+border-radius:15px;
+}
+#taskList li button{
+    padding:8px 15px;
+    margin-left:10px;
+    font-size:14px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+#taskList li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    padding:12px;
+}
