@@ -114,20 +114,8 @@
 
     </section>
 
-<section class="api-section">
 
-<h2>Random Dog Image</h2>
-
-<img id="dogImage">
-
-<br><br>
-
-<button onclick="getDogImage()">
-Load New Dog
-</button>
-
-</section>
-
+    
     <section class="todo-section">
     <h2>Pet Care To-Do List</h2>
 
@@ -135,6 +123,41 @@ Load New Dog
     <button onclick="addTask()">Add Task</button>
 
     <ul id="taskList"></ul>
+</section>
+
+    <section class="products">
+
+<h2>🛒 Happy Paws Pet Shop</h2>
+
+<p>Buy premium products for your lovely pets.</p>
+
+<div class="product-controls">
+
+<input
+type="text"
+id="searchProduct"
+placeholder="Search Products..."
+onkeyup="displayProducts()">
+
+<select id="filterCategory" onchange="displayProducts()">
+<option value="all">All Categories</option>
+<option value="Food">Food</option>
+<option value="Toy">Toy</option>
+<option value="Accessory">Accessory</option>
+</select>
+
+<select id="sortPrice" onchange="displayProducts()">
+<option value="default">Sort By</option>
+<option value="low">Price Low to High</option>
+<option value="high">Price High to Low</option>
+</select>
+
+</div>
+
+<h3>🛒 Cart : <span id="cartCount">0</span></h3>
+
+<div id="productContainer" class="card-container"></div>
+
 </section>
 
     <!-- Footer -->
@@ -145,7 +168,39 @@ Load New Dog
 
     </footer>
 
-    <script src="script.js"></script> 
+    <!-- <script src="script.js"></script>  -->
+
+
+    <!-- Order Popup -->
+
+<div id="orderPopup" class="popup">
+
+<div class="popup-content">
+
+<h2>Order Details</h2>
+
+<form id="orderForm">
+
+<input type="text" id="customerName" placeholder="Full Name" required>
+
+<input type="tel" id="customerPhone" placeholder="Mobile Number" required>
+
+<input type="email" id="customerEmail" placeholder="Email Address" required>
+
+<textarea id="customerAddress" placeholder="Delivery Address" required></textarea>
+
+<input type="hidden" id="productName">
+
+<button type="submit">Place Order</button>
+
+<button type="button" onclick="closePopup()">Cancel</button>
+
+</form>
+
+</div>
+
+</div>
+<script src="script.js"></script> 
 
 </body>
 </html>
